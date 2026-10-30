@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>R.A. Shankari — Frontend Developer</title>
+  <meta name="description"
+    content="R.A. Shankari — frontend developer building fast, responsive websites with React, Next.js and Tailwind CSS. 60+ websites shipped.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="lights">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <p class="loader-text" id="loaderText">Warming up the tyres…</p>
+    <p class="lights-out" id="lightsOut">LIGHTS OUT.</p>
+  </div>
+
+  <!-- ============ TRACK PROGRESS ============ -->
+  <div class="track-progress" aria-hidden="true">
+    <div class="track-fill" id="trackFill"></div>
+    <span class="kart" id="kart">🏎️</span>
+  </div>
+  <div class="lap-counter race-only" id="lapCounter" aria-hidden="true">LAP <b id="lapNum">1</b>/7</div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <a href="#start" class="logo">SHANKARI <span class="logo-num">#60</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#start"><span data-race>Start Line</span><span data-recruiter>Home</span></a>
+      <a href="#driver"><span data-race>Driver</span><span data-recruiter>About</span></a>
+      <a href="#garage"><span data-race>Garage</span><span data-recruiter>Skills</span></a>
+      <a href="#laps"><span data-race>Laps</span><span data-recruiter>Experience</span></a>
+      <a href="#showroom"><span data-race>Showroom</span><span data-recruiter>Projects</span></a>
+      <a href="#podium"><span data-race>Podium</span><span data-recruiter>Achievements</span></a>
+      <a href="#radio"><span data-race>Pit Radio</span><span data-recruiter>Contact</span></a>
+    </nav>
+    <div class="nav-actions">
+      <button class="mode-toggle" id="modeToggle" aria-pressed="false"
+        title="Boss is watching? Switch to Recruiter mode.">
+        <span data-race>🏎️ Race</span><span data-recruiter>👔 Recruiter</span>
+      </button>
+      <a class="btn btn-dark resume-btn" href="assets/Shankari-RA-Resume.pdf" download
+        data-tip="Loads faster than a pit stop.">Resume ↓</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="start" data-lap="1">
+      <div class="hero-sticky">
+        <div class="speed-lines" aria-hidden="true"></div>
+        <div class="hero-bg-num" aria-hidden="true">60</div>
+
+        <div class="hero-inner">
+          <p class="label">· R.A. SHANKARI · FRONTEND DEVELOPER</p>
+
+          <div data-race>
+            <h1 class="hero-title frame frame-1">Hi, I'm Shankari.<br>I build websites at <em>race pace.</em></h1>
+            <h1 class="hero-title frame frame-2" aria-hidden="true">Currently studying <em>AI &amp; Data Science</em>
+              —<br>so the next sites might start thinking for themselves.</h1>
+            <p class="hero-sub">60+ websites shipped. Zero left stuck in the pit lane.</p>
+          </div>
+
+          <div data-recruiter>
+            <h1 class="hero-title">R.A. Shankari — <em>Software Developer</em></h1>
+            <p class="hero-sub">Frontend developer building responsive, high-performance websites with React, Next.js
+              and Tailwind CSS. Final-year B.Tech student in AI &amp; Data Science.</p>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="#laps" class="btn btn-red"><span data-race>See the laps →</span><span data-recruiter>View
+                experience →</span></a>
+            <a href="assets/Shankari-RA-Resume.pdf" class="btn btn-ghost" download><span data-race>Grab the
+                resume</span><span data-recruiter>Download resume</span></a>
+          </div>
+        </div>
+
+        <p class="scroll-hint race-only">Scroll to accelerate ↓</p>
+        <div class="kerb" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============ DRIVER / ABOUT ============ -->
+    <section class="section" id="driver" data-lap="2">
+      <div class="container">
+        <h2 class="section-title reveal"><span data-race>Meet the <em>driver.</em></span><span data-recruiter>About
+            <em>me</em></span></h2>
+
+        <div class="driver-grid">
+          <div class="driver-card reveal">
+            <div class="driver-card-head">
+              <span>RACE LICENCE</span><span class="driver-num">#60</span>
+            </div>
+            <!-- PLACEHOLDER: replace with <img src="assets/img/shankari.jpg" alt="Portrait of R.A. Shankari"> -->
+            <div class="photo-placeholder">
+              <span>📸</span>
+              <p>Photo coming soon<br><small>assets/img/shankari.jpg</small></p>
+            </div>
+            <dl class="driver-stats">
+              <div>
+                <dt>Driver</dt>
+                <dd>R.A. Shankari</dd>
+              </div>
+              <div>
+                <dt>Team</dt>
+                <dd>TCP International Inc.</dd>
+              </div>
+              <div>
+                <dt>Position</dt>
+                <dd>Software Developer</dd>
+              </div>
+              <div>
+                <dt>Academy</dt>
+                <dd>Jansons Institute of Technology — B.Tech AI &amp; DS, Class of 2027</dd>
+              </div>
+              <div>
+                <dt><span data-race>Qualifying time</span><span data-recruiter>CGPA</span></dt>
+                <dd>8.41 <span data-race>CGPA</span></dd>
+              </div>
+              <div>
+                <dt><span data-race>Radio languages</span><span data-recruiter>Languages</span></dt>
+                <dd>English (fluent), French (intermediate)<span data-race> — <i>je parle un peu, et je code
+                      beaucoup</i></span></dd>
+              </div>
+              <div class="race-only">
+                <dt>Superpower</dt>
+                <dd>Turning “can you make it pop?” into actual CSS</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="driver-bio reveal">
+            <div data-race>
+              <p class="lead">I'm a frontend developer who treats every website like a race car: it has to look sharp,
+                it has to be fast, and it has to cross the finish line before the deadline.</p>
+              <p>I started with a coconut brand and a colour wheel. Now I build websites in bulk for one of the world's
+                biggest automotive expos. Somewhere in between, I hosted an actual karting race. The racing theme isn't
+                a gimmick. It's basically a documentary.</p>
+              <p>When I'm not writing code, I'm organising things: fests, magazines, 300-person events. Turns out
+                managing chaos and managing <code>z-index</code> use the same skills.</p>
+            </div>
+            <div data-recruiter>
+              <p class="lead">Motivated engineering student and working software developer with strong analytical skills
+                and hands-on frontend experience.</p>
+              <p>I've delivered 60+ production websites and bring a habit of meeting deadlines without compromising
+                design quality. Currently pursuing a B.Tech in Artificial Intelligence and Data Science (CGPA 8.41).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GARAGE / SKILLS ============ -->
+    <section class="section section-light" id="garage" data-lap="3">
+      <div class="container">
+        <h2 class="section-title reveal"><span data-race>Welcome to the <em>garage.</em></span><span
+            data-recruiter><em>Skills</em></span></h2>
+        <p class="section-sub reveal" data-race>Every good car is just good parts, well put together. Here are mine.</p>
+
+        <div class="garage-grid">
+          <article class="part-card tilt-l reveal" style="--card: var(--note-1)">
+            <span class="tape" aria-hidden="true"></span>
+            <p class="part-icon">🔧</p>
+            <h3><span data-race>The Engine</span><span data-recruiter>Frontend</span></h3>
+            <p class="chips">React · Next.js · JavaScript · TypeScript</p>
+            <p data-race>The part that makes things go. Components in, horsepower out.</p>
+          </article>
+          <article class="part-card tilt-r reveal" style="--card: var(--note-2)">
+            <span class="tape" aria-hidden="true"></span>
+            <p class="part-icon">🎨</p>
+            <h3><span data-race>The Bodywork</span><span data-recruiter>Design &amp; UI</span></h3>
+            <p class="chips">HTML · CSS · Tailwind CSS · Figma</p>
+            <p data-race>Aerodynamics matter. So does padding. I care about both.</p>
+          </article>
+          <article class="part-card tilt-l2 reveal" style="--card: var(--note-3)">
+            <span class="tape" aria-hidden="true"></span>
+            <p class="part-icon">📡</p>
+            <h3><span data-race>The Telemetry</span><span data-recruiter>Data</span></h3>
+            <p class="chips">SQL · Database Management · AI &amp; DS (in progress)</p>
+            <p data-race>Every great team reads the data. I'm studying how to make the data read back.</p>
+          </article>
+          <article class="part-card tilt-r2 reveal" style="--card: var(--note-4)">
+            <span class="tape" aria-hidden="true"></span>
+            <p class="part-icon">🧰</p>
+            <h3><span data-race>The Pit Crew Kit</span><span data-recruiter>Tools &amp; CMS</span></h3>
+            <p class="chips">Git &amp; Version Control · WordPress</p>
+            <pre class="commits" data-race>git commit -m "final"
+git commit -m "final_final"
+git commit -m "ok this one is actually final"</pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LAPS / EXPERIENCE ============ -->
+    <section class="section" id="laps" data-lap="4">
+      <div class="container">
+        <h2 class="section-title reveal"><span data-race>Lap <em>times.</em></span><span
+            data-recruiter><em>Experience</em></span></h2>
+        <p class="section-sub reveal" data-race>Real tracks, real deadlines, no safety car.</p>
+
+        <div class="timeline">
+          <article class="lap reveal">
+            <div class="lap-flag on-track"><span data-race>LAP 2 · ON TRACK</span><span data-recruiter>CURRENT</span>
+            </div>
+            <h3>Software Developer — TCP International Inc.</h3>
+            <p class="lap-date">Feb 2026 – Present</p>
+            <div data-race>
+              <p class="lap-hook"><strong>60+ websites for the Automechanika Expo.</strong> Yes, sixty. Yes, an
+                automotive expo. Yes, the racing theme is method acting.</p>
+              <ul>
+                <li>Built and delivered 60+ responsive static websites that all look, feel and perform consistently. A
+                  whole grid of cars on the same setup sheet.</li>
+                <li>Wrote frontend code in HTML, CSS, JavaScript and React/Next.js, mobile-first every time.</li>
+                <li>Worked with the team to fix issues, tune performance and cross the line before every deadline.</li>
+              </ul>
+            </div>
+            <ul data-recruiter>
+              <li>Developed and delivered 60+ responsive static websites for the Automechanika Expo, ensuring consistent
+                design, usability and performance.</li>
+              <li>Frontend development with HTML, CSS, JavaScript, React/Next.js and responsive design principles.</li>
+              <li>Collaborated across teams to troubleshoot issues, optimise performance and meet deadlines.</li>
+            </ul>
+            <div class="lap-stats">
+              <div><b data-count="60">0</b><span>+ sites</span></div>
+              <div><b data-count="100">0</b><span>% responsive</span></div>
+            </div>
+          </article>
+
+          <article class="lap reveal">
+            <div class="lap-flag"><span data-race>LAP 1 · ROOKIE SEASON</span><span data-recruiter>PREVIOUS</span></div>
+            <h3>Frontend Developer — Anaimalais Coco</h3>
+            <p class="lap-date">Sep 2024 – Feb 2025</p>
+            <div data-race>
+              <p class="lap-hook"><strong>My first real track: a coconut brand.</strong></p>
+              <ul>
+                <li>Designed and built the full website using colour theory, so the coconuts looked as fresh online as
+                  they do in real life.</li>
+                <li>Connected shipping and payment APIs, so people can actually buy the coconuts. Kind of important.
+                </li>
+                <li>Built on WordPress: design, plugins and content management, start to finish.</li>
+                <li>Delivered a fully working site on deadline. Rookie season, podium attitude.</li>
+              </ul>
+            </div>
+            <ul data-recruiter>
+              <li>Built the company website using colour theory and integrated shipping and payment APIs.</li>
+              <li>Implemented the site in WordPress, including design, plugin integration and content management.</li>
+              <li>Delivered a fully functional website within the deadline.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOWROOM / PROJECTS ============ -->
+    <section class="section section-light" id="showroom" data-lap="5">
+      <div class="container">
+        <h2 class="section-title reveal"><span data-race>The <em>showroom.</em></span><span
+            data-recruiter><em>Projects</em></span></h2>
+        <p class="section-sub reveal" data-race>Cars I built. Please don't lean on them.</p>
+
+        <!-- PLACEHOLDERS: replace each .shot-placeholder with <img src="assets/projects/xxx.jpg" alt="..."> -->
+        <div class="showroom-grid">
+          <a class="project tall reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 0">PROJECT 01</div>
+            <div class="project-meta">
+              <h3>Automechanika Expo websites</h3>
+              <p data-race>One design system, sixty websites, zero crashes.</p>
+              <p data-recruiter>60+ responsive event websites with a shared design system.</p>
+              <span class="tags">Next.js · Responsive · 2026</span>
+            </div>
+          </a>
+          <a class="project reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 120">PROJECT 02</div>
+            <div class="project-meta">
+              <h3>Anaimalais Coco</h3>
+              <p data-race>Coconuts, now with checkout.</p>
+              <p data-recruiter>WordPress e-commerce site with shipping and payment integrations.</p>
+              <span class="tags">WordPress · E-commerce · 2024–25</span>
+            </div>
+          </a>
+          <a class="project reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 210">PROJECT 03</div>
+            <div class="project-meta">
+              <h3>Project name</h3>
+              <p data-race>Still in the garage. Rolling out soon.</p>
+              <p data-recruiter>Project description coming soon.</p>
+              <span class="tags">Tags · Year</span>
+            </div>
+          </a>
+          <a class="project tall reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 280">PROJECT 04</div>
+            <div class="project-meta">
+              <h3>Project name</h3>
+              <p data-race>Still in the garage. Rolling out soon.</p>
+              <p data-recruiter>Project description coming soon.</p>
+              <span class="tags">Tags · Year</span>
+            </div>
+          </a>
+          <a class="project reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 40">PROJECT 05</div>
+            <div class="project-meta">
+              <h3>Project name</h3>
+              <p data-race>Still in the garage. Rolling out soon.</p>
+              <p data-recruiter>Project description coming soon.</p>
+              <span class="tags">Tags · Year</span>
+            </div>
+          </a>
+          <a class="project reveal" href="#">
+            <div class="shot-placeholder" style="--hue: 170">PROJECT 06</div>
+            <div class="project-meta">
+              <h3>Project name</h3>
+              <p data-race>Still in the garage. Rolling out soon.</p>
+              <p data-recruiter>Project description coming soon.</p>
+              <span class="tags">Tags · Year</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="featured reveal">
+          <h3 class="featured-title"><span data-race>Featured <em>builds.</em></span><span data-recruiter>Featured
+              <em>projects</em></span></h3>
+          <ul class="featured-list">
+            <li><a href="#"><span class="f-name">Automechanika Expo — 60+ event websites</span><span
+                  class="f-tags"><i>Next.js</i><i>Responsive</i></span><span class="f-year">2026</span><span
+                  class="f-arrow">↗</span></a></li>
+            <li><a href="#"><span class="f-name">Anaimalais Coco — e-commerce website</span><span
+                  class="f-tags"><i>WordPress</i><i>Payments</i></span><span class="f-year">2024</span><span
+                  class="f-arrow">↗</span></a></li>
+            <li><a href="#"><span class="f-name">Project name — short description</span><span
+                  class="f-tags"><i>Tag</i><i>Tag</i></span><span class="f-year">Year</span><span
+                  class="f-arrow">↗</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PODIUM / ACHIEVEMENTS ============ -->
+    <section class="section" id="podium" data-lap="6">
+      <div class="container">
+        <h2 class="section-title reveal"><span data-race>The <em>trophy</em> cabinet.</span><span
+            data-recruiter><em>Achievements</em></span></h2>
+        <p class="section-sub reveal" data-race>Things I did when nobody asked me to write code.</p>
+
+        <div class="trophy-grid">
+          <article class="trophy gold reveal">
+            <p class="trophy-icon">🏎️</p>
+            <h3><span data-race>Track-side host</span><span data-recruiter>Event host</span></h3>
+            <p class="trophy-what">Indian Karting Race (IKR) &amp; Formula Imperial · Nov 2025</p>
+            <p data-race>I hosted a real karting race. I held the mic, not the steering wheel. <em>This time.</em></p>
+          </article>
+          <article class="trophy reveal">
+            <p class="trophy-icon">🎪</p>
+            <h3><span data-race>Race director</span><span data-recruiter>Overall Student Coordinator</span></h3>
+            <p class="trophy-what">Varnave 2025 · 300+ participants</p>
+            <p data-race>300+ participants, one fest, and me with the clipboard. Nobody got lost. Mostly.</p>
+          </article>
+          <article class="trophy reveal">
+            <p class="trophy-icon">🎭</p>
+            <h3><span data-race>Festival organiser</span><span data-recruiter>Fest organiser &amp; host</span></h3>
+            <p class="trophy-what">Technical &amp; non-technical cultural fest</p>
+            <p data-race>A fest with both a coding track and a dance-floor track. Range.</p>
+          </article>
+          <article class="trophy reveal">
+            <p class="trophy-icon">📰</p>
+            <h3><span data-race>Magazine team lead</span><span data-recruiter>Magazine team lead</span></h3>
+            <p class="trophy-what">College magazine · design, editing, publishing</p>
+            <p data-race>Led writers, designers and editors to publish it. Basically a website, but you can hold it.</p>
+          </article>
+          <article class="trophy reveal">
+            <p class="trophy-icon">🏆</p>
+            <h3><span data-race>House captain</span><span data-recruiter>School House President</span></h3>
+            <p class="trophy-what">“Best Squad” award</p>
+            <p data-race>Team captain energy has been there since day one.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PIT RADIO / CONTACT ============ -->
+    <section class="section section-radio" id="radio" data-lap="7">
+      <div class="container radio-grid">
+        <div class="reveal">
+          <p class="label race-only">📻 PIT RADIO · CHANNEL OPEN</p>
+          <h2 class="radio-title" data-race><em>Box, box!</em><br>Let's build something fast together.</h2>
+          <h2 class="radio-title" data-recruiter>Let's work <em>together.</em></h2>
+          <p class="radio-sub" data-race>Got a website stuck in the pits, an idea that needs a body kit, or a role that
+            needs a frontend developer? Radio in.</p>
+          <p class="radio-sub" data-recruiter>I'm open to software and frontend developer roles. The fastest way to
+            reach me is by email.</p>
+        </div>
+
+        <div class="reveal">
+          <div class="link-grid">
+            <a href="https://github.com/shanu-13" target="_blank" rel="noopener">GitHub <span>↗</span></a>
+            <a href="https://www.linkedin.com/in/shankari-ramu-6632b129a" target="_blank" rel="noopener">LinkedIn
+              <span>↗</span></a>
+            <a href="assets/Shankari-RA-Resume.pdf" download>Resume <span>↓</span></a>
+            <a href="mailto:shankari9514@gmail.com">Email <span>↗</span></a>
+          </div>
+          <p class="email-label">Direct email</p>
+          <button class="email-copy" id="emailCopy" data-email="shankari9514@gmail.com">
+            shankari9514@gmail.com
+            <small>⧉ Click to copy</small>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="chequer" aria-hidden="true"></div>
+    <p class="footer-big" data-race>🏁 You've reached the finish line. Thanks for the lap.</p>
+    <p class="footer-big" data-recruiter>Thanks for visiting.</p>
+    <p class="footer-small">Designed &amp; built by R.A. Shankari · © 2026 · <a href="#start"><span data-race>Back to
+          the start ↑</span><span data-recruiter>Back to top ↑</span></a></p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
