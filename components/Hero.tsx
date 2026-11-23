@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   motion, useScroll, useSpring, useTransform, useVelocity,
 } from "framer-motion";
@@ -36,8 +37,6 @@ export default function Hero() {
   const f2Opacity = useTransform(p, [0.4, 0.7], [0, 1]);
   const f2Scale = useTransform(p, [0.4, 0.75], [0.8, 1]);
   const f2Y = useTransform(p, [0.4, 0.75], [80, 0]);
-  const bgX = useTransform(p, [0, 1], ["0%", "-35%"]);
-  const bgRotate = useTransform(p, [0, 1], [-8, 4]);
   const hintOpacity = useTransform(p, [0, 0.1], [1, 0]);
 
   // speed lines lean harder the faster you scroll
@@ -53,19 +52,64 @@ export default function Hero() {
     >
       <div className="hero-sticky">
         {race && <motion.div className="speed-lines" style={{ skewX: skew }} aria-hidden />}
-        <motion.div
-          key={mode}
-          className="hero-bg-num"
-          style={race ? { x: bgX, rotate: bgRotate } : undefined}
-          initial={{ opacity: 0, x: 200 }}
-          animate={ready ? { opacity: 1, x: 0 } : undefined}
-          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          aria-hidden
-        >
-          60
-        </motion.div>
 
-        <div className="hero-inner">
+        {!race && (
+          <div className="rh">
+            <div className="rh-copy">
+              <motion.p
+                className="rh-status"
+                initial={{ opacity: 0, y: 12 }}
+                animate={ready ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: 0.6 }}
+              >
+                <span aria-hidden /> {hero.status}
+              </motion.p>
+              {ready && <RevealTitle key={t(hero.title)} as="h1" className="hero-title rh-title" text={t(hero.title)} immediate delay={0.1} />}
+              <motion.p
+                className="hero-sub rh-sub"
+                initial={{ opacity: 0, y: 16 }}
+                animate={ready ? { opacity: 1, y: 0 } : undefined}
+                transition={{ delay: 0.5, duration: 0.7 }}
+              >
+                {t(hero.sub)}
+              </motion.p>
+              <motion.div
+                className="hero-ctas rh-ctas"
+                initial={{ opacity: 0, y: 16 }}
+                animate={ready ? { opacity: 1, y: 0 } : undefined}
+                transition={{ delay: 0.65, duration: 0.7 }}
+              >
+                <a href="#showroom" className="btn btn-red">View projects →</a>
+                <a href={site.resume} className="btn btn-ghost" download>{t(hero.ctaSecondary)} ↓</a>
+              </motion.div>
+              <motion.ul
+                className="rh-stack"
+                initial={{ opacity: 0 }}
+                animate={ready ? { opacity: 1 } : undefined}
+                transition={{ delay: 0.8, duration: 0.7 }}
+              >
+                {hero.stack.map(s => <li key={s}>{s}</li>)}
+              </motion.ul>
+            </div>
+
+            <motion.figure
+              className="rh-photo"
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={ready ? { opacity: 1, scale: 1, y: 0 } : undefined}
+              transition={{ delay: 0.2, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {site.photo.recruiter && (
+                <Image src={site.photo.recruiter} alt="Portrait of R.A. Shankari" fill priority sizes="(max-width: 900px) 80vw, 420px" />
+              )}
+              <figcaption className="rh-badge">
+                <b>R.A. Shankari</b>
+                <span>Software Developer · TCP International Inc.</span>
+              </figcaption>
+            </motion.figure>
+          </div>
+        )}
+
+        {race && <div className="hero-inner">
           <motion.p
             className="label"
             initial={{ opacity: 0, letterSpacing: "0.6em" }}
@@ -105,14 +149,14 @@ export default function Hero() {
               </motion.h2>
             )}
           </div>
-        </div>
+        </div>}
 
         {race && (
           <motion.p className="scroll-hint" style={{ opacity: hintOpacity }}>
             Scroll to accelerate <motion.span animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.4 }}>↓</motion.span>
           </motion.p>
         )}
-        <div className="kerb" aria-hidden />
+        {race && <div className="kerb" aria-hidden />}
       </div>
     </section>
   );

@@ -189,7 +189,7 @@ function Billboard({ at, text, side, bg, fg, w = 12 }: { at: number; text: strin
 
 function Gantry() {
   const s = samples[2];
-  const tex = useMemo(() => bannerTexture("SHANKARI GP · #60", "#111", "#ffcc1a", 1024, 160), []);
+  const tex = useMemo(() => bannerTexture("SHANKARI GP", "#111", "#ffcc1a", 1024, 160), []);
   return (
     <group position={s.p} rotation={[0, s.heading, 0]}>
       {[-1, 1].map(i => (
@@ -214,12 +214,11 @@ function Gantry() {
 }
 
 const boards: { at: number; text: string; side: 1 | -1; bg?: string; fg?: string }[] = [
-  { at: 0.07, text: "60+ WEBSITES SHIPPED", side: -1, bg: "#ffcc1a" },
   { at: 0.17, text: "EAU ROUGE? EASY.", side: 1 },
   { at: 0.3, text: "REACT · NEXT.JS · TS", side: -1, bg: "#19d3c5" },
   { at: 0.42, text: "BOX BOX BOX!", side: 1, bg: "#e3262b", fg: "#fffaf0" },
   { at: 0.56, text: "NO BUGS PAST THIS POINT", side: -1 },
-  { at: 0.7, text: "HIRE THE #60 →", side: 1, bg: "#ffcc1a" },
+  { at: 0.7, text: "HIRE SHANKARI →", side: 1, bg: "#ffcc1a" },
   { at: 0.84, text: "DEPLOY ON FRIDAY? NO.", side: -1, bg: "#19d3c5" },
 ];
 

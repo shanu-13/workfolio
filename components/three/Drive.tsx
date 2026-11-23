@@ -13,7 +13,7 @@ const CAR_URL = "/assets/models/racing-car.glb";
 const CAR_SCALE = 1.25;
 
 
-// recolour the CC0 model into the #60 livery: black body, teal accents
+// recolour the CC0 model into the team livery: black body, teal accents
 const LIVERY: Record<string, string> = {
   "Material.005": "#2a2f37", // body
   "Material.006": "#19d3c5", // wings, engine cover, helmet
@@ -43,19 +43,6 @@ function useCarParts() {
     const size = box.getSize(new THREE.Vector3());
     return { parts, length: size.x, width: size.z };
   }, [scene]);
-}
-
-function numberDecal() {
-  const cv = document.createElement("canvas");
-  cv.width = cv.height = 256;
-  const c = cv.getContext("2d")!;
-  c.fillStyle = "#fffaf0"; c.beginPath(); c.arc(128, 128, 118, 0, Math.PI * 2); c.fill();
-  c.lineWidth = 14; c.strokeStyle = "#111"; c.stroke();
-  c.font = "150px Bangers, Impact, sans-serif"; c.textAlign = "center"; c.textBaseline = "middle";
-  c.fillStyle = "#e3262b"; c.fillText("60", 128, 140);
-  const t = new THREE.CanvasTexture(cv);
-  t.colorSpace = THREE.SRGBColorSpace;
-  return t;
 }
 
 function shadowTexture() {
@@ -100,7 +87,6 @@ export default function Drive({ reduced }: { reduced: boolean }) {
   const smoke = useRef<THREE.InstancedMesh>(null);
   const { camera, size } = useThree();
   const mats = useMemo(() => ({
-    decal: new THREE.MeshBasicMaterial({ map: numberDecal(), transparent: true }),
     shadow: new THREE.MeshBasicMaterial({ map: shadowTexture(), transparent: true, depthWrite: false }),
   }), []);
 
@@ -214,12 +200,6 @@ export default function Drive({ reduced }: { reduced: boolean }) {
           {parts.map((p, i) => (
             <mesh key={i} geometry={p.geo} material={toon(p.color)}>
               <Outlines thickness={2.6} color="#0b0b0d" angle={Math.PI} />
-            </mesh>
-          ))}
-          {/* #60 roundels on the engine cover */}
-          {[1, -1].map(side => (
-            <mesh key={side} position={[side * 0.36, 0.62, -0.75]} rotation={[0, side * Math.PI / 2, 0]} material={mats.decal}>
-              <circleGeometry args={[0.26, 24]} />
             </mesh>
           ))}
         </group>

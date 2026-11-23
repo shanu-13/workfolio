@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "R.A. Shankari — Frontend Developer",
-  description: "R.A. Shankari — frontend developer building fast, responsive websites with React, Next.js and Tailwind CSS. 60+ websites shipped.",
+  description: "R.A. Shankari — frontend developer building fast, responsive websites with React, Next.js and Tailwind CSS.",
 };
 
 // Fonts load from Google Fonts directly; next/font/google fails in Turbopack dev mode.

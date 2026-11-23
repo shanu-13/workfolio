@@ -8,8 +8,8 @@ export const site = {
   name: "R.A. Shankari",
   email: "shankari9514@gmail.com",
   resume: "/assets/Shankari-RA-Resume.pdf",
-  // PLACEHOLDER: drop the photo at public/assets/img/shankari.jpg and set this to "/assets/img/shankari.jpg"
-  photo: null as string | null,
+  // portrait per mode: race = comic driver card, recruiter = profile card
+  photo: { race: "/assets/img/shankari.png", recruiter: "/assets/img/shankari2.png" } as Record<"race" | "recruiter", string | null>,
   links: {
     github: "https://github.com/shanu-13",
     linkedin: "https://www.linkedin.com/in/shankari-ramu-6632b129a",
@@ -34,18 +34,20 @@ export const loaderLines = [
 ];
 
 export const hero = {
-  label: "#60 · R.A. SHANKARI · FRONTEND DEVELOPER",
-  title: c("Hi, I'm Shankari. I build websites at *race pace.*", "R.A. Shankari — *Software Developer*"),
+  label: "R.A. SHANKARI · FRONTEND DEVELOPER",
+  title: c("Hi, I'm Shankari. I build websites at *race pace.*", "I build *fast, responsive* websites that ship on time."),
+  status: "Open to software & frontend developer roles",
+  stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Figma"],
   second: "Currently studying *AI & Data Science* — so the next sites might start *thinking.*",
   sub: c(
-    "60+ websites shipped. Zero left stuck in the pit lane.",
+    "All websites Delievered,Zero left stuck in the pit lane.",
     "Frontend developer building responsive, high-performance websites with React, Next.js and Tailwind CSS. Final-year B.Tech student in AI & Data Science."
   ),
   ctaPrimary: c("See the laps →", "View experience →"),
   ctaSecondary: c("Grab the resume", "Download resume"),
 };
 
-export const marquee = ["Lights out", "60+ websites", "React", "Next.js", "TypeScript", "Tailwind", "Figma", "Race pace", "AI & DS"];
+export const marquee = ["Lights out", "React", "Next.js", "TypeScript", "Tailwind", "Figma", "Race pace", "AI & DS"];
 
 export const driver = {
   title: c("Meet the *driver.*", "About *me*"),
@@ -65,7 +67,7 @@ export const driver = {
   body: [
     c(
       "I started with a coconut brand and a colour wheel. Now I build websites in bulk for one of the world's biggest automotive expos. Somewhere in between, I hosted an actual karting race. The racing theme isn't a gimmick. It's basically a documentary.",
-      "I've delivered 60+ production websites and bring a habit of meeting deadlines without compromising design quality. Currently pursuing a B.Tech in Artificial Intelligence and Data Science (CGPA 8.41)."
+      "I've delivered production websites at scale and bring a habit of meeting deadlines without compromising design quality. Currently pursuing a B.Tech in Artificial Intelligence and Data Science (CGPA 8.41)."
     ),
     c("When I'm not writing code, I'm organising things: fests, magazines, 300-person events. Turns out managing chaos and managing `z-index` use the same skills.", ""),
   ],
@@ -80,19 +82,19 @@ export const driver = {
       { k: "Education", v: "B.Tech, AI & Data Science", at: "Jansons Institute of Technology", when: "Class of 2027" },
     ],
     highlights: [
-      { v: "60+", k: "Production websites delivered" },
+      { v: "2", k: "Frontend roles so far" },
       { v: "8.41", k: "CGPA in B.Tech AI & DS" },
       { v: "300+", k: "Participants at a fest I coordinated" },
     ],
     strengths: [
       { icon: "code", t: "Frontend engineering", d: "React, Next.js, TypeScript, JavaScript and Tailwind CSS, built mobile-first." },
-      { icon: "layers", t: "Delivery at scale", d: "60+ consistent, responsive websites for the Automechanika Expo, shipped on deadline." },
+      { icon: "layers", t: "Delivery at scale", d: "Consistent, responsive websites for the Automechanika Expo, shipped on deadline." },
       { icon: "users", t: "Leadership & communication", d: "Overall Student Coordinator for a 300+ participant fest; event host and magazine team lead." },
     ],
   },
 
   // ---- race mode only: the comic-page version of this section ----
-  card: { role: "Frontend Developer", team: "TCP International Inc.", licence: "LIC-0060-AIDS-27" },
+  card: { role: "Frontend Developer", team: "TCP International Inc.", licence: "LIC-AIDS-27" },
   ratings: [
     { k: "Pace", v: 94 },
     { k: "Pixel precision", v: 98 },
@@ -102,7 +104,7 @@ export const driver = {
   story: [
     { ep: "EP. 1", icon: "🥥", title: "The coconut era", text: "First real track: a full website for a coconut brand. Colour wheel, payments, shipping, the works.", tone: "yellow" },
     { ep: "EP. 2", icon: "🎙️", title: "Mic on the grid", text: "Hosted an actual karting race. Held the mic, not the steering wheel. *This time.*", tone: "teal" },
-    { ep: "EP. 3", icon: "🏁", title: "Expo mode", text: "60+ websites for the Automechanika Expo. Every one across the line on time.", tone: "red" },
+    { ep: "EP. 3", icon: "🏁", title: "Expo mode", text: "A whole grid of websites for the Automechanika Expo. Every one across the line on time.", tone: "red" },
   ],
   facts: [
     { icon: "🎓", k: "Academy", v: "Jansons Institute of Technology · B.Tech AI & DS · Class of 2027" },
@@ -114,8 +116,8 @@ export const driver = {
 };
 
 export const garage = {
-  title: c("Welcome to the *garage.*", "*Skills*"),
-  sub: c("Every good car is just good parts, well put together. Drag them around — they're yours to inspect.", ""),
+  title: c("Welcome to the *garage.*", "Technical *skills*"),
+  sub: c("Every good car is just good parts, well put together. Drag them around — they're yours to inspect.", "The tools I use to design, build and ship."),
   parts: [
     { icon: "🔧", name: c("The Engine", "Frontend"), chips: "React · Next.js · JavaScript · TypeScript", note: c("The part that makes things go. Components in, horsepower out.", ""), color: "#ffe9e6" },
     { icon: "🎨", name: c("The Bodywork", "Design & UI"), chips: "HTML · CSS · Tailwind CSS · Figma", note: c("Aerodynamics matter. So does padding. I care about both.", ""), color: "#e6f0ff" },
@@ -125,7 +127,7 @@ export const garage = {
 };
 
 export const laps = {
-  title: c("Lap *times.*", "*Experience*"),
+  title: c("Lap *times.*", "Work *experience*"),
   sub: c("Real tracks, real deadlines, no safety car.", ""),
   items: [
     {
@@ -175,29 +177,27 @@ export const laps = {
   ],
 };
 
-// PLACEHOLDERS: set `image` to "/assets/projects/<file>.jpg" and `href` to the live link.
 export const projects = {
-  title: c("The *showroom.*", "*Projects*"),
-  sub: c("Cars I built. Please don't lean on them.", ""),
+  title: c("The *showroom.*", "Selected *projects*"),
+  sub: c("Cars I built. Please don't lean on them.", "Live sites I've designed and built. Click any card to open it."),
   items: [
-    { name: "Automechanika Expo websites", line: c("One design system, sixty websites, zero crashes.", "60+ responsive event websites with a shared design system."), tags: "Next.js · Responsive · 2026", hue: 0, tall: true, image: null as string | null, href: "#" },
-    { name: "Anaimalais Coco", line: c("Coconuts, now with checkout.", "WordPress e-commerce site with shipping and payment integrations."), tags: "WordPress · E-commerce · 2024–25", hue: 120, tall: false, image: null as string | null, href: "#" },
-    { name: "Project name", line: c("Still in the garage. Rolling out soon.", "Project description coming soon."), tags: "Tags · Year", hue: 210, tall: false, image: null as string | null, href: "#" },
-    { name: "Project name", line: c("Still in the garage. Rolling out soon.", "Project description coming soon."), tags: "Tags · Year", hue: 280, tall: true, image: null as string | null, href: "#" },
-    { name: "Project name", line: c("Still in the garage. Rolling out soon.", "Project description coming soon."), tags: "Tags · Year", hue: 40, tall: false, image: null as string | null, href: "#" },
-    { name: "Project name", line: c("Still in the garage. Rolling out soon.", "Project description coming soon."), tags: "Tags · Year", hue: 170, tall: false, image: null as string | null, href: "#" },
+    { name: "Anaimalais Coco", line: c("Coconuts, now with checkout.", "WordPress e-commerce site with shipping and payment integrations."), tags: "WordPress · E-commerce · 2024–25", hue: 120, image: "/assets/projects/coco.png", href: "https://anaimalaiscoco.com/" },
+    { name: "Axiom Autotech — demo website", line: c("Car parts, served at full throttle.", "Product showcase demo website for an automotive parts brand."), tags: "Next.js · Responsive · 2026", hue: 210, image: "/assets/projects/axiom.png", href: "https://custom.servicevisuals.com/business/axiom/website-demo" },
+    { name: "Automechanika Expo website", line: c("Built for the expo floor. Fuelled for the finish line.", "Responsive event website built for the Automechanika Expo."), tags: "Next.js · Responsive · 2026", hue: 0, image: "/assets/projects/automechanika.png", href: "https://custom.servicevisuals.com/business/petronas/website-demo" },
+    { name: "Portfolio — Shanuh", line: c("The other garage. Different paint job.", "Personal portfolio website."), tags: "Next.js · Vercel · 2026", hue: 280, image: "/assets/projects/portfolio.png", href: "https://shanuh.vercel.app/" },
   ],
   featuredTitle: c("Featured *builds.*", "Featured *projects*"),
   featured: [
-    { name: "Automechanika Expo — 60+ event websites", tags: ["Next.js", "Responsive"], year: "2026", href: "#" },
-    { name: "Anaimalais Coco — e-commerce website", tags: ["WordPress", "Payments"], year: "2024", href: "#" },
-    { name: "Project name — short description", tags: ["Tag", "Tag"], year: "Year", href: "#" },
+    { name: "Anaimalais Coco — e-commerce website", tags: ["WordPress", "Payments"], year: "2024", href: "https://anaimalaiscoco.com/" },
+    { name: "Axiom Autotech — demo website", tags: ["Next.js", "Responsive"], year: "2026", href: "https://custom.servicevisuals.com/business/axiom/website-demo" },
+    { name: "Automechanika Expo — event website", tags: ["Next.js", "Responsive"], year: "2026", href: "https://custom.servicevisuals.com/business/petronas/website-demo" },
+    { name: "Portfolio — shanuh.vercel.app", tags: ["Next.js", "Vercel"], year: "2026", href: "https://shanuh.vercel.app/" },
   ],
 };
 
 export const podium = {
-  title: c("The *trophy* cabinet.", "*Achievements*"),
-  sub: c("Things I did when nobody asked me to write code.", ""),
+  title: c("The *trophy* cabinet.", "Leadership & *achievements*"),
+  sub: c("Things I did when nobody asked me to write code.", "Beyond code: events, teams and publications I've led."),
   items: [
     { icon: "🏎️", name: c("Track-side host", "Event host"), what: "Indian Karting Race (IKR) & Formula Imperial · Nov 2025", note: c("I hosted a real karting race. I held the mic, not the steering wheel. *This time.*", ""), gold: true },
     { icon: "🎪", name: c("Race director", "Overall Student Coordinator"), what: "Varnave 2025 · 300+ participants", note: c("300+ participants, one fest, and me with the clipboard. Nobody got lost. Mostly.", ""), gold: false },

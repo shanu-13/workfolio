@@ -22,7 +22,28 @@ export default function Garage() {
         <RevealTitle key={t(garage.title)} className="section-title" text={t(garage.title)} />
         {t(garage.sub) && <Reveal><p className="section-sub">{t(garage.sub)}</p></Reveal>}
 
-        <div className="garage-grid" ref={area}>
+        {!race && (
+          <div className="skill-grid">
+            {garage.parts.map((p, i) => (
+              <motion.article
+                key={i}
+                className="skill-card"
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-8% 0px" }}
+                transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <span className="skill-num">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{t(p.name)}</h3>
+                <ul className="skill-chips">
+                  {p.chips.split(" · ").map(chip => <li key={chip}>{chip}</li>)}
+                </ul>
+              </motion.article>
+            ))}
+          </div>
+        )}
+
+        {race && <div className="garage-grid" ref={area}>
           {garage.parts.map((p, i) => (
             <motion.article
               key={i}
@@ -52,7 +73,7 @@ export default function Garage() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </div>}
       </div>
     </section>
   );

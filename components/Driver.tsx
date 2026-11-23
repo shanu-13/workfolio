@@ -10,13 +10,13 @@ import { rich } from "./Rich";
 
 const pop = { type: "spring", stiffness: 260, damping: 18 } as const;
 
-function Photo({ sizes }: { sizes: string }) {
-  return site.photo ? (
-    <div className="photo"><Image src={site.photo} alt="Portrait of R.A. Shankari" fill sizes={sizes} /></div>
+function Photo({ sizes, src }: { sizes: string; src: string | null }) {
+  return src ? (
+    <div className="photo"><Image src={src} alt="Portrait of R.A. Shankari" fill sizes={sizes} /></div>
   ) : (
     <div className="photo photo-placeholder">
       <span>📸</span>
-      <p>Photo coming soon<br /><small>public/assets/img/shankari.jpg</small></p>
+      <p>Photo coming soon<br /><small>public/assets/img/</small></p>
     </div>
   );
 }
@@ -36,9 +36,8 @@ function ComicPage() {
         <Tilt className="dp-card" max={8}>
           <div className="dp-card-head">
             <span>DRIVER CARD</span>
-            <b>#60</b>
           </div>
-          <div className="dp-photo"><Photo sizes="360px" /></div>
+          <div className="dp-photo"><Photo sizes="360px" src={site.photo.race} /></div>
           <div className="dp-name">
             <h3>{site.name}</h3>
             <p>{driver.card.role} · <strong>{driver.card.team}</strong></p>
@@ -134,7 +133,6 @@ function Profile() {
   return (
     <div className="bento">
       <motion.aside className="bx bx-id" {...rise(0)}>
-        <div className="bx-photo"><Photo sizes="380px" /></div>
         <div className="bx-id-body">
           <h3>{site.name}</h3>
           <p className="bx-role">{p.role} at <strong>{p.team}</strong></p>

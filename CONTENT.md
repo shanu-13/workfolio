@@ -49,14 +49,14 @@ Button: **Download Resume**. Hover text: *"Loads faster than a pit stop."*
 
 ## 2. Hero — "Lights Out"
 
-**Small label:** `#60 · R.A. SHANKARI · FRONTEND DEVELOPER`
+**Small label:** ` R.A. SHANKARI · FRONTEND DEVELOPER`
 
 **Headline:**
 > Hi, I'm Shankari.
 > I build websites at *race pace.*
 
 **Subline:**
-> 60+ websites shipped. Zero left stuck in the pit lane.
+>websites shipped. Zero left stuck in the pit lane.
 
 **Scroll story, second frame** (crossfades in like the reference's second headline):
 > Currently studying *AI & Data Science* —
